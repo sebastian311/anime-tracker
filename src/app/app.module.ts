@@ -10,6 +10,7 @@ import { CarouselComponent } from './shared-library/components/carousel/carousel
 import { AutocompleteComponent } from './shared-library/components/autocomplete/autocomplete.component';
 import { HomeComponent } from './smart-components/home/home.component';
 import { LandingPageComponent } from './smart-components/landing-page/landing-page.component';
+import { ImageSectionComponent } from './shared-library/components/image-section/image-section.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LandingPageComponent } from './smart-components/landing-page/landing-pa
     CarouselComponent,
     AutocompleteComponent,
     HomeComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    ImageSectionComponent
   ],
   imports: [
     BrowserModule,

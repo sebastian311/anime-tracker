@@ -1,0 +1,59 @@
+.image-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    height: 45vh; /* Adjusted to fill the intended space */
+    overflow: hidden; /* To make sure nothing spills out */
+}
+
+.image-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 45vh;
+    object-fit: cover;
+}
+
+.overlay-text, .overlay-buttons {
+    position: relative;
+    padding-left: 3%;
+    padding-bottom: 3%;
+    z-index: 1; /* To make sure these elements stay on top */
+}
+
+.overlay-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.overlay-buttons button {
+    background-color: #FF8F2F;
+    border: none;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+  }
+  
+.overlay-buttons button:hover {
+    background-color: #ff6a0082; /* A slightly darker shade for hover effect */
+}
+  
+.overlay-text h1, .overlay-text p {
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+  
