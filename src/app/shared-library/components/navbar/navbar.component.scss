@@ -1,3 +1,31 @@
-* {
-    position: fixed;
+@import 'src/stylesVariables.scss';
+
+.bx {
+    color: white;
+    font-size: x-large;
+}
+
+.navbarWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    position: fixed; /* This keeps the navbar fixed at the top */
+    z-index: 9999999;
+    top: 0;
+    // background-color: rgba(0, 0, 0, 0.5); /* Adding some background color to make the navbar distinct */
+    
+    .mobile-view {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        
+        .left, .right {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+    }
 }

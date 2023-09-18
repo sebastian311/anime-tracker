@@ -1,3 +1,5 @@
+@import 'src/stylesVariables.scss';
+
 .image-section {
     display: flex;
     flex-direction: column;
@@ -42,7 +44,7 @@
 }
 
 .overlay-buttons button {
-    background-color: #FF8F2F;
+    background-color: $btn-primary-color;
     border: none;
     color: #FFFFFF;
     padding: 10px 20px;
@@ -50,7 +52,7 @@
   }
   
 .overlay-buttons button:hover {
-    background-color: #ff6a0082; /* A slightly darker shade for hover effect */
+    background-color: $btn-primary-color-hover; /* A slightly darker shade for hover effect */
 }
   
 .overlay-text h1, .overlay-text p {
