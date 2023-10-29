@@ -7,10 +7,25 @@
   </header>
   
   <main class="bottom-section container" style="background-color: black; min-height: 55%;">
+      <!-- Top tier animes section -->
       <section>
+        <div class="title-section">
+          <span>Top Hits Anime</span>
+          <span>See all</span>
+        </div>
         <app-carousel [dataStream]="mockedData"></app-carousel>
       </section>
-      <!-- Other bottom section content here -->
+      <!-- Hot animes section -->
+      <section>
+        <div class="title-section">
+          <span>
+            <span style="color: red;">HOT</span>
+            now
+          </span>
+          <span>See all</span>
+        </div>
+        <app-carousel [dataStream]="mockedData2"></app-carousel>
+      </section>
   </main>
   
   <footer>

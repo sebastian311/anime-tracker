@@ -1,10 +1,31 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 
     .upper-section{
         overflow: hidden;
+    }
+
+    main {
+        padding: 0 1rem 0 1rem;
+
+        section .title-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 2.5rem;
+
+            span:first-child {
+                font-size: larger;
+                color: white;
+            }
+            span:nth-last-child(1) {
+                font-size: smaller;
+                color: rgba(255, 166, 0, 0.533);
+            }
+        }
     }
 }
   
