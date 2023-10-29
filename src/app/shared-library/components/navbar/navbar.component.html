@@ -1,7 +1,7 @@
 <div class="navbarWrapper" #navbarWrapper>
     <div class="mobile-view">
         <div class="left">
-            <i class='bx bx-menu'></i>
+            <i class='bx bx-menu' [ngClass]="{'bx-active': menuActive}" (click)="toggleMenu()"></i>
         </div>
         
         <div class="right">
@@ -12,4 +12,22 @@
     <div class="desktop-view">
         <!-- To be implemented -->
     </div>
+</div>
+
+<!-- Side Menu -->
+<div class="side-menu" [ngClass]="{'active': menuActive}">
+    <div class="title-section">
+        Menu
+        <hr>
+    </div>
+    <ul id="actions-options" *ngIf="!isLogged">
+        <li>
+            <i class='bx bxs-lock' style="color: #EA857D"></i> <a routerLink="#" style="margin-left: 5px;">Login</a>
+        </li>
+    </ul>
+    <ul id="actions-options" *ngIf="isLogged">
+        <li>
+            <a routerLink="#">Logout</a>
+        </li>
+    </ul>
 </div>

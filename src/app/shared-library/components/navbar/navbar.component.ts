@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { fromEvent, throttleTime, map } from 'rxjs';
 
 @Component({
@@ -6,8 +6,10 @@ import { fromEvent, throttleTime, map } from 'rxjs';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements AfterViewInit{
   @ViewChild('navbarWrapper') navbarWrapper!: ElementRef<HTMLElement>;
+  menuActive = false;
+  isLogged = false;
 
   ngAfterViewInit() {
     fromEvent(window, 'scroll').pipe(
@@ -18,5 +20,9 @@ export class NavbarComponent {
       const opacity = Math.min(scrollY / 100, maxOpacity); 
       this.navbarWrapper.nativeElement.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
     });
+  }
+  
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
   }
 }
