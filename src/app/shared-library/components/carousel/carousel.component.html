@@ -1,1 +1,26 @@
-<p>carousel works!</p>
+<div [ngClass]="isDesktop ? 'desktopView' : 'mobileView'">
+
+  <section *ngFor="let item of mockedData; let i = index">
+
+    <div class="relativeToParentWrapper">
+      <div class="custom-dropdown">
+        <i class='bx bx-dots-horizontal-rounded' id="icon" (click)="openDropdown()"></i>
+        
+        <mat-select #selectMenu>
+          <mat-option>
+            test 1
+          </mat-option>
+          <mat-option>
+            test 2
+          </mat-option>
+          <mat-option>
+            test 3
+          </mat-option>
+        </mat-select>
+
+      </div>    
+    </div>
+
+    <img [src]="item.image" alt="🤒😷🤮Something went🤮awfully wrong💉💊🤒" class="carouselImage">
+  </section>
+</div>
