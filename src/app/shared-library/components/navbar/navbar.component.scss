@@ -16,7 +16,7 @@
     width: 100%;
     padding: 5%;
     position: fixed; /* This keeps the navbar fixed at the top */
-    z-index: 9999999;
+    z-index: 99;
     top: 0;
     // background-color: rgba(0, 0, 0, 0.5); /* Adding some background color to make the navbar distinct */
     
@@ -31,6 +31,20 @@
             align-items: center;
             gap: 35px;
         }
+
+        .hidden-search {
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;  // or transform: scaleY(0) if it's a scale issue
+            transition: opacity 0.3s, max-height 0.3s 0.3s;  // or transform 0.3s if it's a scale issue
+        }
+          
+        .active-search {
+            opacity: 1;
+            visibility: visible;
+            max-height: 300px;  // adjust as per your need or transform: scaleY(1)
+            transition: opacity 0.3s, max-height 0.3s;
+        }          
     }
 }
 
@@ -55,8 +69,11 @@
     .title-section {
         margin-top: 1rem;
         font-size: xx-large;
-        text-align: center;
         color: orange;
+
+        i {
+            margin-left: 1rem;
+        }
 
         hr {
             border: none;

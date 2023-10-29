@@ -1,7 +1,9 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSelectModule } from '@angular/material/select'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +32,10 @@ import { ImageSectionComponent } from './shared-library/components/image-section
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
