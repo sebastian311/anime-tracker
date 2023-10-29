@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MatSelect } from '@angular/material/select';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
@@ -8,63 +8,11 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent {
-  @ViewChild('selectMenu') selectMenu!:MatSelect;
-  mockedData: any[] = [
-    {
-        "id": 1,
-        "title": "Naruto",
-        "description": "Lorem Ipsum Leaf Villigium",
-        "image": "../../../assets/naruto.png",
-        "rating": 4.5,
-        "ranking": 1,
-        "votes": 200
-    },
-    {
-        "id": 2,
-        "title": "One Piece",
-        "description": "Lorem Ipsum Pirate Adventures",
-        "image": "../../../assets/onepiece.png",
-        "rating": 4.7,
-        "ranking": 2,
-        "votes": 190
-    },
-    {
-        "id": 3,
-        "title": "Bleach",
-        "description": "Lorem Ipsum Soul Society",
-        "image": "../../../assets/myhero.png",
-        "rating": 4.3,
-        "ranking": 3,
-        "votes": 180
-    },
-    {
-        "id": 4,
-        "title": "Death Note",
-        "description": "Lorem Ipsum Shinigami",
-        "image": "../../../assets/fairytail.png",
-        "rating": 4.8,
-        "ranking": 4,
-        "votes": 170
-    },
-    {
-        "id": 5,
-        "title": "Attack on Titan",
-        "description": "Lorem Ipsum Titans",
-        "image": "../../../assets/overlord.png",
-        "rating": 4.9,
-        "ranking": 5,
-        "votes": 160
-    }
-  ]
+  @ViewChildren(MatSelect) selects!: QueryList<MatSelect>;
+  @Input() dataStream!: any[];
+  
 
-  // "id": 5,
-  // "title": "Attack on Titan",
-  // "description": "Lorem Ipsum Titans",
-  // "image": "../../../assets/overlord.png",
-  // "rating": 4.9,
-  // "ranking": 5,
-  // "votes": 160
-
+  selectedValues: string[] = [];
   isDesktop: boolean = true;
 
   constructor(private detector:DeviceDetectorService){
@@ -74,7 +22,14 @@ export class CarouselComponent {
     }
   }
 
-  openDropdown(): void {
-    this.selectMenu.open();
+  updateSelection(index: number, event: any) {
+    this.selectedValues[index] = event.value;
+  }  
+
+  openDropdown(index: number): void {
+    const matSelect = this.selects.toArray()[index];
+    if (matSelect) {
+      matSelect.open();
+    }
   }
 }

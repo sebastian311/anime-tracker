@@ -1,20 +1,20 @@
 <div [ngClass]="isDesktop ? 'desktopView' : 'mobileView'">
 
-  <section *ngFor="let item of mockedData; let i = index">
+  <section *ngFor="let item of dataStream; let i = index">
 
     <div class="relativeToParentWrapper">
       <div class="custom-dropdown">
-        <i class='bx bx-dots-horizontal-rounded' id="icon" (click)="openDropdown()"></i>
+        <i class='bx bx-dots-horizontal-rounded' id="icon" (click)="openDropdown(i)"></i>
         
-        <mat-select #selectMenu>
-          <mat-option>
-            test 1
+        <mat-select #selects [(ngModel)]="selectedValues[i]" (selectionChange)="updateSelection(i, $event)">
+          <mat-option value="About" [routerLink]="['/about-' + item.id]">
+            About
           </mat-option>
-          <mat-option>
-            test 2
+          <mat-option value="Reviews" [routerLink]="['/about-' + item.id + '/reviews']">
+            Reviews
           </mat-option>
-          <mat-option>
-            test 3
+          <mat-option disabled value="Watch" routerLink="#">
+            Watch 
           </mat-option>
         </mat-select>
 
