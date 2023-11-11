@@ -7,13 +7,13 @@ import { tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimeTrackerService {
-  #http = Inject(HttpClient);
+  constructor(private http: HttpClient) {}
 
   getAnimeList() {
-      return this.#http.get(environment.apiUrl).pipe(
+      return this.http.get(environment.apiUrl + `/api/anime-list`).pipe(
         tap({
           next: (data) => {
-            console.log('Data received:', data);
+            return data;
           },
           error: (err) => {
             console.error('Error occurred:', err);

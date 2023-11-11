@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSelectModule } from '@angular/material/select'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +16,8 @@ import { HomeComponent } from './smart-components/home/home.component';
 import { LandingPageComponent } from './smart-components/landing-page/landing-page.component';
 import { ImageSectionComponent } from './shared-library/components/image-section/image-section.component';
 import { SideMenuComponent } from './shared-library/components/navbar/side-menu/side-menu.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FakeBackendInterceptor } from './shared-library/services/fake-backend.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { SideMenuComponent } from './shared-library/components/navbar/side-menu/
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatSelectModule,
     FormsModule,
@@ -37,7 +41,9 @@ import { SideMenuComponent } from './shared-library/components/navbar/side-menu/
     ReactiveFormsModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
