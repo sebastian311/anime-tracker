@@ -1,10 +1,12 @@
+import { Anime } from "../models/anime.interface";
 
-const mockedData: any[] = [
+const mockedData: Anime[] = [
     {
       id: 1,
       title: 'Naruto',
       description: 'Lorem Ipsum Leaf Villigium',
       image: '../../../assets/naruto.png',
+      heroImage: '../../../assets/myhero.png',
       rating: 4.5,
       ranking: 1,
       votes: 200,
@@ -14,6 +16,7 @@ const mockedData: any[] = [
       title: 'One Piece',
       description: 'Lorem Ipsum Pirate Adventures',
       image: '../../../assets/onepiece.png',
+      heroImage: '../../../assets/myhero.png',
       rating: 4.7,
       ranking: 2,
       votes: 190,
@@ -23,6 +26,7 @@ const mockedData: any[] = [
       title: 'Bleach',
       description: 'Lorem Ipsum Soul Society',
       image: '../../../assets/myhero.png',
+      heroImage: '../../../assets/myhero.png',
       rating: 4.3,
       ranking: 3,
       votes: 180,
@@ -32,6 +36,7 @@ const mockedData: any[] = [
       title: 'Death Note',
       description: 'Lorem Ipsum Shinigami',
       image: '../../../assets/fairytail.png',
+      heroImage: '../../../assets/myhero.png',
       rating: 4.8,
       ranking: 4,
       votes: 170,
@@ -41,17 +46,19 @@ const mockedData: any[] = [
       title: 'Attack on Titan',
       description: 'Lorem Ipsum Titans',
       image: '../../../assets/overlord.png',
+      heroImage: '../../../assets/myhero.png',
       rating: 4.9,
       ranking: 5,
       votes: 160,
     },
 ];
-const mockedData2: any[] = [
+const mockedData2: Anime[] = [
 {
     id: 3,
     title: 'Bleach',
     description: 'Lorem Ipsum Soul Society',
     image: '../../../assets/myhero.png',
+    heroImage: '../../../assets/myhero.png',
     rating: 4.3,
     ranking: 3,
     votes: 180,
@@ -61,6 +68,7 @@ const mockedData2: any[] = [
     title: 'Death Note',
     description: 'Lorem Ipsum Shinigami',
     image: '../../../assets/fairytail.png',
+    heroImage: '../../../assets/myhero.png',
     rating: 4.8,
     ranking: 4,
     votes: 170,
@@ -70,6 +78,7 @@ const mockedData2: any[] = [
     title: 'Attack on Titan',
     description: 'Lorem Ipsum Titans',
     image: '../../../assets/overlord.png',
+    heroImage: '../../../assets/myhero.png',
     rating: 4.9,
     ranking: 5,
     votes: 160,
@@ -79,6 +88,7 @@ const mockedData2: any[] = [
     title: 'Naruto',
     description: 'Lorem Ipsum Leaf Villigium',
     image: '../../../assets/naruto.png',
+    heroImage: '../../../assets/myhero.png',
     rating: 4.5,
     ranking: 1,
     votes: 200,
@@ -88,6 +98,7 @@ const mockedData2: any[] = [
     title: 'One Piece',
     description: 'Lorem Ipsum Pirate Adventures',
     image: '../../../assets/onepiece.png',
+    heroImage: '../../../assets/myhero.png',
     rating: 4.7,
     ranking: 2,
     votes: 190,

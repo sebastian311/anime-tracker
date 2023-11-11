@@ -1,6 +1,6 @@
 <div class="side-menu" [ngClass]="{'active': menuActive}">
     <div class="title-section">
-        <i class='bx bx-menu' (click)="toggleMenu()" style="font-size: x-large"></i>
+        <i class='bx bx-menu' (click)="toggleMenu()" style="font-size: x-large;"></i>
         <ng-container *ngIf="isLogged; else welcome">
             &nbsp;&nbsp;
             Welcome back user
@@ -11,20 +11,36 @@
         </ng-template>
         <hr>
     </div>
+    <!-- Here should be added user's favorite anime randomly, or current top anime (different from hottest now ~ hero) -->
+    <div class="image-panel" 
+    [ngStyle]="{'background-image': imageUrl ? 'url(' + imageUrl + ')' : 'none'}"
+    ></div>
     <ul id="actions-options" *ngIf="!isLogged">
         <li>
-            <i class='bx bxs-lock' style="color: #EA857D"></i> <a routerLink="#" style="margin-left: 5px;">Login</a>
+            <i class='bx bxs-lock' style="color: orange"></i> 
+                <a routerLink="#" 
+                style="margin-left: 5px; margin-top: 5px;">
+                    Login
+                </a>
         </li>
         <li>
-            <i class='bx bx-log-in-circle' style="color: #EA857D"></i> <a routerLink="#">Register</a>
-        </li>
-        <li>
-            <i class='bx bx-log-in-circle' style="color: #EA857D"></i> <a routerLink="#">Settings</a>
+            <i class='bx bx-user-plus' style="color: orange"></i> 
+                <a routerLink="#" 
+                style="margin-left: 5px; margin-top: 5px;">
+                    Register
+                </a>
         </li>
     </ul>
     <ul id="actions-options" *ngIf="isLogged">
         <li>
-            <i class='bx bx-log-in-circle' style="color: #EA857D"></i> <a routerLink="#">Logout</a>
+            <i class='bx bx-cog' style="color: #EA857D"></i> 
+                <a routerLink="#" 
+                style="margin-left: 5px; margin-top: 5px;">
+                    Settings
+                </a>
+        </li>
+        <li>
+            <i class='bx bx-log-in-circle' style="color: red"></i> <a routerLink="#">Logout</a>
         </li>
     </ul>
 </div>

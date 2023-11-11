@@ -9,14 +9,18 @@ import { AnimeTrackerService } from 'src/app/shared-library/services/anime-track
 export class SideMenuComponent implements OnInit{
   @Input() menuActive: boolean = false;
   @Output() closeMenu = new EventEmitter<void>();
-  isLogged: boolean = false;
 
   #animeService = inject(AnimeTrackerService);
+
+  isLogged: boolean = false;
+  imageUrl: string | undefined;
+
 
   ngOnInit(): void {
     this.#animeService.getAnimeList().subscribe(
       data => {
-        console.log('Anime list received:', data);
+        const anime = data.find(anime => anime.ranking == 1)
+        this.imageUrl = anime?.heroImage;
       },
       error => {
         console.error('Error fetching anime list:', error);
