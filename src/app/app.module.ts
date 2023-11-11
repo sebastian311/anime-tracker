@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared-library/components/navbar/navbar.component';
 import { CardComponent } from './shared-library/components/card/card.component';
 import { CarouselComponent } from './shared-library/components/carousel/carousel.component';
-import { AutocompleteComponent } from './shared-library/components/autocomplete/autocomplete.component';
 import { HomeComponent } from './smart-components/home/home.component';
 import { LandingPageComponent } from './smart-components/landing-page/landing-page.component';
 import { ImageSectionComponent } from './shared-library/components/image-section/image-section.component';
@@ -23,7 +22,6 @@ import { SideMenuComponent } from './shared-library/components/navbar/side-menu/
     NavbarComponent,
     CardComponent,
     CarouselComponent,
-    AutocompleteComponent,
     HomeComponent,
     LandingPageComponent,
     ImageSectionComponent,
