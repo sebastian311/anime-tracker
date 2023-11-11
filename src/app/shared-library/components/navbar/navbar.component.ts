@@ -99,10 +99,16 @@ export class NavbarComponent implements AfterViewInit{
   }
 
   toggleSearch() {
+    this.closeMenu();
     this.searchActive = !this.searchActive;
   }
   
-  toggleMenu() {
-    this.menuActive = !this.menuActive;
+  openMenu() {
+    this.menuActive = true;
+    this.searchActive = false
+  }
+
+  closeMenu() {
+    this.menuActive = false;
   }
 }

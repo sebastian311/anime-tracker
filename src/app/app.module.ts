@@ -15,6 +15,7 @@ import { AutocompleteComponent } from './shared-library/components/autocomplete/
 import { HomeComponent } from './smart-components/home/home.component';
 import { LandingPageComponent } from './smart-components/landing-page/landing-page.component';
 import { ImageSectionComponent } from './shared-library/components/image-section/image-section.component';
+import { SideMenuComponent } from './shared-library/components/navbar/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ImageSectionComponent } from './shared-library/components/image-section
     AutocompleteComponent,
     HomeComponent,
     LandingPageComponent,
-    ImageSectionComponent
+    ImageSectionComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="navbarWrapper" #navbarWrapper>
     <div class="mobile-view">
         <div class="left">
-            <i class='bx bx-menu' [ngStyle]="{'display': menuActive ? 'none' : 'inline-block'}" (click)="toggleMenu()"></i>
+            <i class='bx bx-menu' [ngStyle]="{'display': menuActive ? 'none' : 'inline-block'}" (click)="openMenu()"></i>
         </div>
         
         <form class="example-form">
@@ -32,7 +32,8 @@
 </div>
 
 <!-- Side Menu -->
-<div class="side-menu" [ngClass]="{'active': menuActive}">
+<app-side-menu [menuActive]="menuActive" (closeMenu)="closeMenu()"></app-side-menu>
+<!-- <div class="side-menu" [ngClass]="{'active': menuActive}">
     <div class="title-section">
         <i class='bx bx-menu' [ngClass]="{'bx-active': menuActive}" (click)="toggleMenu()"></i>
         &nbsp;&nbsp;
@@ -49,4 +50,4 @@
             <i class='bx bx-log-in-circle' style="color: #EA857D"></i> <a routerLink="#">Logout</a>
         </li>
     </ul>
-</div>
+</div> -->

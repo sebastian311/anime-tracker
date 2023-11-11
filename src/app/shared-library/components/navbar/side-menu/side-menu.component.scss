@@ -1,0 +1,45 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    padding: 5%;
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+
+    z-index: 100;
+
+    .title-section {
+        font-size: 2rem;
+        color: orange;
+        
+        i {
+            margin-left: 1rem;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: white;
+            opacity: 0.5;
+        }    
+    }
+
+    #actions-options {
+        height: 100%;
+        font-size: xx-large;
+        list-style-type: none;
+        margin-left: -10%;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}

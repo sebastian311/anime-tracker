@@ -1,0 +1,18 @@
+<div class="side-menu" [ngClass]="{'active': menuActive}">
+    <div class="title-section">
+        <i class='bx bx-menu' (click)="toggleMenu()" style="font-size: x-large"></i>
+        &nbsp;&nbsp;
+        Menu
+        <hr>
+    </div>
+    <ul id="actions-options" *ngIf="!isLogged">
+        <li>
+            <i class='bx bxs-lock' style="color: #EA857D"></i> <a routerLink="#" style="margin-left: 5px;">Login</a>
+        </li>
+    </ul>
+    <ul id="actions-options" *ngIf="isLogged">
+        <li>
+            <i class='bx bx-log-in-circle' style="color: #EA857D"></i> <a routerLink="#">Logout</a>
+        </li>
+    </ul>
+</div>
