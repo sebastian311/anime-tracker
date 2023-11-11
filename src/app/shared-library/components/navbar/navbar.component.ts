@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { fromEvent, throttleTime, map, startWith, Observable } from 'rxjs';
+import { fromEvent, throttleTime, map, startWith, Observable, filter, debounceTime, distinctUntilChanged, switchMap, of } from 'rxjs';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 
 import { Anime } from '../../models/anime.interface';
@@ -71,9 +71,20 @@ export class NavbarComponent implements AfterViewInit{
 
   constructor() {
     this.filteredAnimes = this.animeCtrl.valueChanges.pipe(
-      startWith(''),
-      map(anime => (anime ? this._filteranimes(anime) : this.animes.slice())),
+      filter(term => term !== ''),
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap(anime => {
+        // If the term is not empty, filter the animes
+        if (anime) {
+          return of(this._filteranimes(anime));
+        } else {
+          // If the term is empty (e.g., on focus), return the full list or an empty list
+          return of(this.animes.slice());
+        }
+      })
     );
+    
   }
 
   ngAfterViewInit() {
