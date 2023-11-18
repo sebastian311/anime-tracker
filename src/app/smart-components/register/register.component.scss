@@ -1,0 +1,55 @@
+.container, form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: orange;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 5px 0px 25px 2px;
+    color: gray;
+}
+  
+.button {
+    width: 90%;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.bx {
+    position: absolute;
+    font-size: 3rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    color: orange;
+}
+
+::ng-deep {
+    .mat-mdc-checkbox .mdc-form-field .mdc-checkbox .mdc-checkbox__background {
+        border-color: orange!important;
+    }
+    .mat-mdc-checkbox .mdc-form-field .mdc-checkbox .mdc-checkbox__native-control:enabled:focus:checked~.mdc-checkbox__background {
+        background-color: orange!important;
+        border-color: orange!important;
+    }
+    .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+        background-color: orange!important;
+        border-color: orange!important;
+    }
+    .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: white;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+        border-bottom-color: orange !important;
+    }
+}
+  
+  

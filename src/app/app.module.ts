@@ -5,6 +5,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input'
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { ImageSectionComponent } from './shared-library/components/image-section
 import { SideMenuComponent } from './shared-library/components/navbar/side-menu/side-menu.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FakeBackendInterceptor } from './shared-library/services/fake-backend.interceptor';
+import { RegisterComponent } from './smart-components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { FakeBackendInterceptor } from './shared-library/services/fake-backend.i
     HomeComponent,
     LandingPageComponent,
     ImageSectionComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { FakeBackendInterceptor } from './shared-library/services/fake-backend.i
     FormsModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },

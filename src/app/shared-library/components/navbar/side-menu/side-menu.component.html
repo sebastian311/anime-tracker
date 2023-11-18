@@ -12,9 +12,9 @@
         <hr>
     </div>
     <!-- Here should be added user's favorite anime randomly, or current top anime (different from hottest now ~ hero) -->
-    <div class="image-panel" 
+    <!-- <div class="image-panel" 
     [ngStyle]="{'background-image': imageUrl ? 'url(' + imageUrl + ')' : 'none'}"
-    ></div>
+    ></div> -->
     <ul id="actions-options" *ngIf="!isLogged">
         <li>
             <i class='bx bxs-lock' style="color: orange"></i> 
@@ -25,7 +25,7 @@
         </li>
         <li>
             <i class='bx bx-user-plus' style="color: orange"></i> 
-                <a routerLink="#" 
+                <a routerLink="/register" 
                 style="margin-left: 5px; margin-top: 5px;">
                     Register
                 </a>
