@@ -2,7 +2,7 @@
 
 A modern, responsive web application for tracking and discovering anime series. Built with Angular 16 and Material Design.
 
-## 🚀 Features
+## Features
 
 ### Implemented Features
 - **Responsive Design**: Mobile-first approach with dedicated desktop views
@@ -15,17 +15,17 @@ A modern, responsive web application for tracking and discovering anime series. 
 - **Device Detection**: Automatic layout adjustment based on device type
 
 ### UI Components
-- ✅ Responsive Navbar (Mobile & Desktop)
-- ✅ Side Navigation Menu
-- ✅ Carousel Component
-- ✅ Card Component
-- ✅ Landing Page
-- ✅ Home Page
-- ✅ Anime Detail Page
-- ✅ Reviews Page
-- ✅ Registration Page
+- Responsive Navbar (Mobile & Desktop)
+- Side Navigation Menu
+- Carousel Component
+- Card Component
+- Landing Page
+- Home Page
+- Anime Detail Page
+- Reviews Page
+- Registration Page
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Framework**: Angular 16.2.0
 - **Language**: TypeScript 5.1.3
@@ -35,13 +35,13 @@ A modern, responsive web application for tracking and discovering anime series. 
 - **Reactive Programming**: RxJS 7.8.0
 - **Styling**: SCSS with custom variables
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v16 or higher)
 - npm (v8 or higher)
 - Angular CLI (v16.2.0)
 
-## 🔧 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -66,7 +66,7 @@ ng serve
 http://localhost:4200
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/app/
@@ -99,7 +99,7 @@ src/app/
 └── app-routing.module.ts     # Application routes
 ```
 
-## 🎨 Key Features Details
+## Key Features Details
 
 ### Search & Filter
 - Debounced search input (300ms)
@@ -120,7 +120,7 @@ src/app/
 - Conditional field validation
 - Real-time error messages
 
-## 🔮 TODO: Features Requiring Backend Implementation
+## TODO: Features Requiring Backend Implementation
 
 The following features are designed but require backend API implementation:
 
@@ -175,7 +175,7 @@ Requirements:
 - Quality selection
 - Subtitle support
 
-## 🚦 Current State
+## Current State
 
 ### Mock Data
 The application currently uses a **fake backend interceptor** (`fake-backend.interceptor.ts`) that intercepts HTTP requests and returns mock data. This is for development purposes only.
@@ -189,7 +189,7 @@ The application currently uses a **fake backend interceptor** (`fake-backend.int
 ### Authentication
 The `AuthService` is a placeholder with comprehensive TODO comments. All authentication-dependent features (login, logout, favorites, reviews submission) are currently disabled or show placeholder messages.
 
-## 🧪 Testing
+## Testing
 
 Run unit tests:
 ```bash
@@ -206,7 +206,7 @@ Build for production:
 npm run build
 ```
 
-## 📝 Development Notes
+## Development Notes
 
 ### SCSS Variables
 Color scheme and common styles are defined in `src/stylesVariables.scss`:
@@ -229,7 +229,7 @@ All major components include:
 - Inline comments for complex logic
 - Architecture decision documentation
 
-## 🤝 Contributing
+## Contributing
 
 When implementing backend features:
 1. Check TODO comments in relevant service files
@@ -238,15 +238,15 @@ When implementing backend features:
 4. Add proper error handling
 5. Update this README with implementation status
 
-## 📄 License
+## License
 
 [Add your license here]
 
-## 👥 Authors
+## Authors
 
 [Add author information]
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Angular team for the excellent framework
 - Material Design for UI components
