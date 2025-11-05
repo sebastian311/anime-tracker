@@ -1,1 +1,63 @@
-<p>landing-page works!</p>
+<div class="landing-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to AnimeTracker</h1>
+            <p class="hero-subtitle">Track, discover, and manage your favorite anime series all in one place</p>
+            <div class="hero-actions">
+                <button mat-raised-button color="primary" routerLink="/home" class="cta-button">
+                    Get Started
+                </button>
+                <button mat-stroked-button routerLink="/register" class="secondary-button">
+                    Create Account
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/landingpageimage.png" alt="Anime Collection">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">Why Choose AnimeTracker?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class='bx bx-search-alt'></i>
+                <h3>Discover Anime</h3>
+                <p>Browse through thousands of anime titles with our powerful search and filter features</p>
+            </div>
+            <div class="feature-card">
+                <i class='bx bx-star'></i>
+                <h3>Top Ratings</h3>
+                <p>Find the highest-rated anime based on community votes and professional reviews</p>
+            </div>
+            <div class="feature-card">
+                <i class='bx bx-trending-up'></i>
+                <h3>Trending Now</h3>
+                <p>Stay updated with the hottest and most popular anime series of the season</p>
+            </div>
+            <div class="feature-card">
+                <i class='bx bx-heart'></i>
+                <h3>Personal Collection</h3>
+                <p>Create your personalized watchlist and track your anime journey</p>
+                <!-- TODO: Favorite/watchlist feature needs backend implementation -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Start Your Anime Journey?</h2>
+        <p>Join thousands of anime fans tracking their favorite shows</p>
+        <button mat-raised-button color="primary" routerLink="/home" class="cta-button-large">
+            Explore Anime Now
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 AnimeTracker. All rights reserved.</p>
+        <!-- TODO: Add links to privacy policy, terms of service when available -->
+    </footer>
+</div>

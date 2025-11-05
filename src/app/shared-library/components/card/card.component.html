@@ -1,1 +1,28 @@
-<p>card works!</p>
+<div class="anime-card" [ngClass]="'card-' + cardSize" [routerLink]="['/about-' + anime.id]">
+    <div class="card-image">
+        <img [src]="anime.image" [alt]="anime.title">
+        <div class="card-overlay">
+            <div class="rating-badge">
+                <i class='bx bx-star'></i>
+                <span>{{ anime.rating }}</span>
+            </div>
+            <div class="ranking-badge">
+                #{{ anime.ranking }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card-content">
+        <h3 class="card-title">{{ anime.title }}</h3>
+
+        <div class="card-stats">
+            <span class="votes">
+                <i class='bx bx-user'></i> {{ anime.votes }} votes
+            </span>
+        </div>
+
+        <p *ngIf="showDescription" class="card-description">
+            {{ anime.description }}
+        </p>
+    </div>
+</div>

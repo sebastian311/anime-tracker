@@ -1,0 +1,85 @@
+<!-- Navigation Header -->
+<div class="reviews-header">
+    <i class='bx bx-arrow-back' [routerLink]="['/about-' + animeId]"></i>
+    <h2>Reviews</h2>
+</div>
+
+<!-- Loading State -->
+<div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner">Loading reviews...</div>
+</div>
+
+<!-- Reviews Content -->
+<div *ngIf="!loading" class="reviews-container">
+    <!-- Anime Info Bar -->
+    <div *ngIf="anime" class="anime-info-bar">
+        <img [src]="anime.image" [alt]="anime.title" class="anime-thumbnail">
+        <div class="anime-info">
+            <h3>{{ anime.title }}</h3>
+            <p>{{ reviews.length }} Reviews</p>
+        </div>
+        <div class="rating-summary">
+            <div class="average-rating">{{ averageRating.toFixed(1) }}/10</div>
+            <div class="rating-label">Average Rating</div>
+        </div>
+    </div>
+
+    <!-- Write Review Section -->
+    <div class="write-review-section">
+        <!-- TODO: Authentication required - show login prompt if not authenticated -->
+        <button mat-raised-button color="primary" (click)="submitReview()">
+            <i class='bx bx-edit'></i>
+            Write a Review
+        </button>
+        <p class="auth-note">* You must be logged in to write a review</p>
+    </div>
+
+    <!-- Reviews List -->
+    <div class="reviews-list">
+        <h2>User Reviews</h2>
+
+        <div *ngIf="reviews.length === 0" class="no-reviews">
+            <i class='bx bx-message-square-x'></i>
+            <p>No reviews yet. Be the first to review this anime!</p>
+        </div>
+
+        <div *ngFor="let review of reviews" class="review-card">
+            <div class="review-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class='bx bx-user-circle'></i>
+                    </div>
+                    <div class="user-details">
+                        <h4>{{ review.userName }}</h4>
+                        <span class="review-date">{{ review.date | date: 'MMM d, yyyy' }}</span>
+                    </div>
+                </div>
+
+                <div class="user-rating">
+                    <span class="rating-number">{{ review.rating }}/10</span>
+                    <div class="stars">
+                        <i *ngFor="let star of getRatingStars(review.rating)"
+                           class='bx'
+                           [ngClass]="{
+                               'bxs-star': star === 'full',
+                               'bxs-star-half': star === 'half',
+                               'bx-star': star === 'empty'
+                           }"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-content">
+                <p>{{ review.review }}</p>
+            </div>
+
+            <div class="review-footer">
+                <button mat-button class="helpful-btn" (click)="markHelpful(review.id)">
+                    <i class='bx bx-like'></i>
+                    Helpful ({{ review.helpful }})
+                </button>
+                <!-- TODO: Add report/flag functionality when moderation system is ready -->
+            </div>
+        </div>
+    </div>
+</div>

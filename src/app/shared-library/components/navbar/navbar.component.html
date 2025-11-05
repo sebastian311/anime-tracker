@@ -27,7 +27,34 @@
         </div>
     </div>
     <div class="desktop-view">
-        <!-- To be implemented -->
+        <div class="logo-section">
+            <h2>AnimeTracker</h2>
+        </div>
+
+        <form class="search-form">
+              <input matInput
+                     placeholder="Search anime..."
+                     aria-label="Anime"
+                     [matAutocomplete]="autoDesktop"
+                     [formControl]="animeCtrl">
+              <mat-autocomplete #autoDesktop="matAutocomplete">
+                <mat-option *ngFor="let anime of filteredAnimes | async" [value]="anime.title">
+                  <img alt="" class="example-option-img" [src]="anime.image" height="25">
+                  <span>{{anime.title}}</span> |
+                  <small>Rating: {{anime.rating}}</small>
+                </mat-option>
+              </mat-autocomplete>
+        </form>
+
+        <div class="nav-actions">
+            <!-- TODO: Authentication functionality needs to be implemented -->
+            <!-- Once auth service is ready, wire up login/logout actions here -->
+            <button mat-button *ngIf="!isLogged" routerLink="/register">Sign Up</button>
+            <button mat-button *ngIf="!isLogged">Login</button>
+            <button mat-icon-button *ngIf="isLogged">
+                <i class='bx bx-user-circle'></i>
+            </button>
+        </div>
     </div>
 </div>
 
