@@ -1,0 +1,108 @@
+<!-- Navigation Header -->
+<div class="detail-header">
+    <i class='bx bx-arrow-back' routerLink="/home"></i>
+    <h2>Anime Details</h2>
+</div>
+
+<!-- Loading State -->
+<div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner">Loading...</div>
+</div>
+
+<!-- Anime Not Found -->
+<div *ngIf="!loading && !anime" class="not-found">
+    <h2>Anime Not Found</h2>
+    <p>The anime you're looking for doesn't exist.</p>
+    <button mat-raised-button color="primary" routerLink="/home">Back to Home</button>
+</div>
+
+<!-- Anime Details -->
+<div *ngIf="!loading && anime" class="anime-detail-container">
+    <!-- Hero Section -->
+    <div class="hero-section" [style.background-image]="'url(' + anime.heroImage + ')'">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="anime-title">{{ anime.title }}</h1>
+                <div class="anime-stats">
+                    <div class="stat">
+                        <i class='bx bx-star'></i>
+                        <span>{{ anime.rating }} Rating</span>
+                    </div>
+                    <div class="stat">
+                        <i class='bx bx-trending-up'></i>
+                        <span>Rank #{{ anime.ranking }}</span>
+                    </div>
+                    <div class="stat">
+                        <i class='bx bx-user'></i>
+                        <span>{{ anime.votes }} Votes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Image and Actions -->
+        <div class="sidebar">
+            <img [src]="anime.image" [alt]="anime.title" class="anime-poster">
+
+            <div class="action-buttons">
+                <!-- TODO: Watch functionality requires video streaming integration -->
+                <button mat-raised-button color="primary" class="action-btn" (click)="watchAnime()" disabled>
+                    <i class='bx bx-play-circle'></i>
+                    Watch Now
+                </button>
+
+                <!-- TODO: Favorites requires authentication and backend API -->
+                <button mat-stroked-button class="action-btn" (click)="addToFavorites()">
+                    <i class='bx bx-heart'></i>
+                    Add to Favorites
+                </button>
+
+                <button mat-stroked-button class="action-btn" [routerLink]="['/about-' + anime.id + '/reviews']">
+                    <i class='bx bx-message-square-detail'></i>
+                    View Reviews
+                </button>
+            </div>
+        </div>
+
+        <!-- Description and Info -->
+        <div class="content-section">
+            <section class="info-section">
+                <h2>Synopsis</h2>
+                <p class="description">{{ anime.description }}</p>
+            </section>
+
+            <section class="info-section">
+                <h2>Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Rating:</span>
+                        <span class="info-value">{{ anime.rating }}/10</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Ranking:</span>
+                        <span class="info-value">#{{ anime.ranking }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Total Votes:</span>
+                        <span class="info-value">{{ anime.votes }}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Anime Section -->
+            <section class="related-section" *ngIf="relatedAnime.length > 0">
+                <h2>You Might Also Like</h2>
+                <div class="related-grid">
+                    <app-card
+                        *ngFor="let relatedAnime of relatedAnime"
+                        [anime]="relatedAnime"
+                        [cardSize]="'small'">
+                    </app-card>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

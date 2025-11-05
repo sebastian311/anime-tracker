@@ -13,8 +13,10 @@
           <mat-option value="Reviews" [routerLink]="['/about-' + item.id + '/reviews']">
             Reviews
           </mat-option>
+          <!-- TODO: Watch functionality disabled - requires video streaming integration -->
+          <!-- Once streaming service is implemented, enable this option and add proper routing -->
           <mat-option disabled value="Watch" routerLink="#">
-            Watch 
+            Watch
           </mat-option>
         </mat-select>
 

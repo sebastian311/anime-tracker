@@ -1,0 +1,287 @@
+@import 'src/stylesVariables.scss';
+
+.reviews-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 5%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 98;
+
+    i {
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    h2 {
+        margin: 0;
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+
+    .loading-spinner {
+        font-size: 1.5rem;
+        color: $primary-color;
+    }
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    color: white;
+
+    .anime-info-bar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: linear-gradient(135deg, rgba(234, 133, 125, 0.1) 0%, rgba(234, 133, 125, 0.05) 100%);
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(234, 133, 125, 0.2);
+
+        .anime-thumbnail {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .anime-info {
+            flex: 1;
+
+            h3 {
+                margin: 0 0 5px 0;
+                font-size: 1.5rem;
+            }
+
+            p {
+                margin: 0;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        .rating-summary {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+
+            .average-rating {
+                font-size: 2rem;
+                font-weight: bold;
+                color: $primary-color;
+            }
+
+            .rating-label {
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+
+    .write-review-section {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        text-align: center;
+
+        button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+
+            i {
+                font-size: 1.3rem;
+                margin-right: 8px;
+            }
+        }
+
+        .auth-note {
+            margin: 10px 0 0 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+    }
+
+    .reviews-list {
+        h2 {
+            color: $primary-color;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .no-reviews {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.5);
+
+            i {
+                font-size: 4rem;
+                margin-bottom: 20px;
+                display: block;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+
+            &:hover {
+                border-color: rgba(234, 133, 125, 0.5);
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .review-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+                .user-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .user-avatar {
+                        i {
+                            font-size: 3rem;
+                            color: $primary-color;
+                        }
+                    }
+
+                    .user-details {
+                        h4 {
+                            margin: 0 0 5px 0;
+                            font-size: 1.1rem;
+                        }
+
+                        .review-date {
+                            color: rgba(255, 255, 255, 0.5);
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                .user-rating {
+                    text-align: right;
+
+                    .rating-number {
+                        display: block;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        color: $primary-color;
+                        margin-bottom: 5px;
+                    }
+
+                    .stars {
+                        display: flex;
+                        gap: 2px;
+
+                        i {
+                            font-size: 0.9rem;
+                            color: $primary-color;
+
+                            &.bx-star {
+                                color: rgba(255, 255, 255, 0.3);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .review-content {
+                margin-bottom: 15px;
+
+                p {
+                    line-height: 1.7;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 1rem;
+                    margin: 0;
+                }
+            }
+
+            .review-footer {
+                display: flex;
+                justify-content: flex-start;
+                gap: 15px;
+
+                .helpful-btn {
+                    color: rgba(255, 255, 255, 0.7);
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    i {
+                        font-size: 1.2rem;
+                    }
+
+                    &:hover {
+                        color: $primary-color;
+                        background-color: rgba(234, 133, 125, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .reviews-container {
+        padding: 20px 5%;
+
+        .anime-info-bar {
+            flex-direction: column;
+            text-align: center;
+
+            .anime-thumbnail {
+                width: 100px;
+                height: 150px;
+            }
+        }
+
+        .reviews-list {
+            .review-card {
+                padding: 20px;
+
+                .review-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 15px;
+
+                    .user-rating {
+                        text-align: left;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

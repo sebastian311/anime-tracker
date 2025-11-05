@@ -11,10 +11,24 @@
         </ng-template>
         <hr>
     </div>
-    <!-- Here should be added user's favorite anime randomly, or current top anime (different from hottest now ~ hero) -->
-    <!-- <div class="image-panel" 
-    [ngStyle]="{'background-image': imageUrl ? 'url(' + imageUrl + ')' : 'none'}"
-    ></div> -->
+
+    <!-- Featured Anime Panel -->
+    <!-- TODO: This currently shows the top-ranked anime. Future enhancements: -->
+    <!-- 1. For logged-in users: Show a random anime from their favorites list -->
+    <!-- 2. Requires: Favorites/watchlist feature implementation -->
+    <!-- 3. Requires: User preferences service -->
+    <!-- 4. Add click handler to navigate to anime detail page -->
+    <!-- 5. Add anime title overlay on the image -->
+    <div class="image-panel"
+         *ngIf="imageUrl"
+         [ngStyle]="{'background-image': 'url(' + imageUrl + ')'}"
+         [routerLink]="topAnimeId ? ['/about-' + topAnimeId] : null"
+         [title]="'View ' + topAnimeTitle">
+        <div class="image-overlay">
+            <span class="featured-label">Featured Anime</span>
+        </div>
+    </div>
+
     <ul id="actions-options" *ngIf="!isLogged">
         <li>
             <i class='bx bxs-lock' style="color: orange"></i> 

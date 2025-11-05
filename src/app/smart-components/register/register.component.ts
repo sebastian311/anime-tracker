@@ -77,7 +77,7 @@ export class RegisterComponent {
 
   getErrorPassword() {
     return this?.formGroup?.get('password')?.hasError('required') ? 'Field is required' :
-      this?.formGroup?.get('password')?.hasError('requirements') ? 'Password needs to be at least six characters, one uppercase letter and one number' : '';
+      this?.formGroup?.get('password')?.hasError('requirements') ? 'Password needs to be at least eight characters, one uppercase letter and one number' : '';
   }
 
   onSubmit(post: any) {
